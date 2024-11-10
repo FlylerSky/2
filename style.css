@@ -1,0 +1,52 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+    font-size: 15pt;
+    background: black;
+    font-family: sans-serif;
+    display: flex;
+   justify-content: center; /* Căn giữa theo chiều ngang */
+   align-items: center;
+   height: 100vh;
+   color: greenyellow
+}
+#Box {
+  width: 90%;
+  margin:0px 5%;
+  padding: 20px;
+  border-radius: var(--radius);
+  background: var(--head);
+  text-align: center;
+}
+textarea {
+  width: 100%;
+  padding: 5px;
+  height: 150px;
+  border-radius: var(--radius);
+  background: black;
+  color: greenyellow;
+  outline: none;
+  font-family: sans-serif;
+  text-align: center;
+  
+}
+button {
+  width: 100%;
+  padding: 10px;
+  background: white;
+  border-radius: var(--radius);
+  margin: 10px 0px;
+  border: none
+}
+button:hover {
+  background: #0411A0;
+  color: white;
+  border: solid white;
+}
+.gt {
+
+  padding-bottom: 20px;
+}
