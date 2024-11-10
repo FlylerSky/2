@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảo vệ trang web</title>
+    
+</head>
+<body>
+    <!-- Box che phủ toàn màn hình -->
+    <div id="overlay">
+        <div id="login-box">
+            <h2>Vui lòng nhập mã</h2>
+            <input type="password" id="password" placeholder="Nhập mã">
+            <button onclick="checkPassword()">Xác nhận</button>
+            <p id="error-message"></p>
+        </div>
+    </div>
+
+    <!-- Nội dung trang web -->
+    <div id="content">
+        <h1>Chào mừng đến với trang web của tôi!</h1>
+        <p>Đây là nội dung của trang web.</p>
+    </div>
+
+    <script>
+      // Mã chính xác cần nhập
+const correctPassword = "12345";
+
+function checkPassword() {
+    const passwordInput = document.getElementById("password").value;
+    const errorMessage = document.getElementById("error-message");
+
+    if (passwordInput === correctPassword) {
+        // Nếu mã đúng, ẩn overlay và hiển thị nội dung
+        document.getElementById("overlay").style.display = "none";
+        document.getElementById("content").style.display = "block";
+    } else {
+        // Nếu mã sai, hiển thị thông báo lỗi
+        errorMessage.textContent = "Mã không đúng";
+    }
+}
+
+    </script>
+    <style>
+      /* Ẩn nội dung trang web */
+      #content {
+        display: none;
+      }
+      
+      /* Box che phủ toàn màn hình */
+      #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        /* Màu nền mờ */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      
+      /* Hộp thông báo nhập mã */
+      #login-box {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        width: 300px;
+      }
+      
+      #login-box h2 {
+        margin: 0 0 20px;
+      }
+      
+      #login-box input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      
+      #login-box button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      
+      #login-box button:hover {
+        background-color: #45a049;
+      }
+      
+      /* Thông báo lỗi */
+      #error-message {
+        color: red;
+        margin-top: 10px;
+      }
+    </style>
+</body>
+</html>
