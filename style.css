@@ -20,6 +20,7 @@ body {
   border-radius: var(--radius);
   background: var(--head);
   text-align: center;
+  
 }
 textarea {
   width: 100%;
